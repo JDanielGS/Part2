@@ -3,17 +3,12 @@ const Header = (props) => {
         <h1>{props.title}</h1>
     )
 }
-
-const Content = ({ name, exercises }) => {
-    return (
-        <p>{name}: {exercises}</p>
-    )
-}
 const Map = ({parts}) => {
     return(
         <>
-            {parts.map(part => <Content key={part.id}
-            name={part.name} exercises={part.exercises}/>)}
+            {parts.map(part => 
+                <p key={part.id}>{part.name}: {part.exercises}</p>
+            )}
         </>
     )
 }
