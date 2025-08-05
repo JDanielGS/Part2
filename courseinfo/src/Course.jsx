@@ -12,11 +12,9 @@ const Map = ({parts}) => {
         </>
     )
 }
-const Sum = ({parts}) => {
-    let sum = 0
-    parts.forEach(element => {
-      sum+=element.exercises
-    })
+const Total = ({parts}) => {
+    let sum = parts.reduce((acum, part) => acum + part.exercises, 0)
+    console.log(sum)
 
     return(
         <>
@@ -30,7 +28,7 @@ const Course = ({ course }) => {
         <>
             <Header title={course.name} />
             <Map parts={course.parts}/>
-            <Sum parts={course.parts}/>
+            <Total parts={course.parts}/>
         </>
     )
 }
